@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BasketTracker</string>
+    <string name="main_start">Jugar</string>
+    <string name="main_teams">Equipos</string>
+    <string name="team_builder">Constructor</string>
+    <string name="team_add">Añadir</string>
+    <string name="builder_team_name">Nombre equipo</string>
+    <string name="builder_player_name">Nombre jugador</string>
+    <string name="player_number">Numero de dorsal</string>
+    <string name="save">GUARDAR</string>
+    <string name="cancel">CANCELAR</string>
+</resources>
