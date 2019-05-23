@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_basket"
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,27 +16,27 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@color/colorAccent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_local"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="LOCAL"
                 android:textAlignment="gravity"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textAppearance="@style/Timer"
+                android:textSize="40sp" />
 
             <TextView
+                android:id="@+id/text_points_local"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="08"
                 android:textAlignment="gravity"
-
-                android:textColor="@android:color/black"
+                android:textAppearance="@style/Timer"
                 android:textSize="80sp" />
         </LinearLayout>
 
@@ -53,6 +54,7 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:textAlignment="gravity"
+                android:textAppearance="@style/Timer"
                 android:textSize="80sp" />
 
 
@@ -62,26 +64,27 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@color/colorAccent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_visitor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="VISITOR"
                 android:textAlignment="gravity"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textAppearance="@style/Timer"
+                android:textSize="40sp" />
 
             <TextView
+                android:id="@+id/text_points_visitor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="10"
                 android:textAlignment="gravity"
-                android:textColor="@android:color/black"
+                android:textAppearance="@style/Timer"
                 android:textSize="80sp" />
         </LinearLayout>
 
@@ -96,10 +99,11 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3.5"
-            android:background="@color/colorPrimary">
+            android:layout_weight="3.5">
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_local_players"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical" />
@@ -128,19 +132,19 @@
                 android:id="@+id/button_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EDIT" />
+                android:text="EXIT" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3.5"
-            android:background="@color/colorPrimary">
+            android:layout_weight="3.5">
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_visitor_players"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
                 android:orientation="vertical" />
         </LinearLayout>
 

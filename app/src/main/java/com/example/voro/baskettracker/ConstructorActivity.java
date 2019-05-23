@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -18,10 +17,7 @@ import com.example.voro.baskettracker.Utils.DB;
 import com.example.voro.baskettracker.Utils.SQLiteHelper;
 import com.example.voro.baskettracker.Utils.Utils;
 import com.example.voro.baskettracker.adapters.TeamSelectorAdapter;
-import com.example.voro.baskettracker.entities.Team;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.voro.baskettracker.entities.Person;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -121,8 +117,11 @@ public class ConstructorActivity extends AppCompatActivity {
                     String[][] data = {{DB.TEAM_NAME,editName.getText().toString().trim()},{DB.TEAM_POINTS,Integer.toString(0)}};
                     database.insert("Team",data);
                 }else{
-                    String[][] data = {{DB.PERSON_NAME,editName.getText().toString().trim()},{DB.PERSON_POSITION,textPosition.getText().toString()},{DB.PERSON_TEAM, Integer.toString(team_id)}};
-                    database.insert("Person",data);
+                    Person player = new Person();
+                    player.setName(editName.getText().toString().trim());
+                    player.setPosition(textPosition.getText().toString());
+                    player.setTeam(team_id);
+                    database.insertPerson(player);
                 }
                 database.close();
                 setResult(RESULT_OK);

@@ -9,4 +9,7 @@
     <string name="player_number">Numero de dorsal</string>
     <string name="save">GUARDAR</string>
     <string name="cancel">CANCELAR</string>
+    <string name="accept">Aceptar</string>
+    <string name="local_team">Equipo Local</string>
+    <string name="visitor_team">Equipo Visitante</string>
 </resources>

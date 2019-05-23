@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
-        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MatchActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".MatchActivity" android:screenOrientation="landscape" />
         <activity android:name=".TeamBuilderActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ConstructorActivity" android:screenOrientation="portrait"/>
     </application>

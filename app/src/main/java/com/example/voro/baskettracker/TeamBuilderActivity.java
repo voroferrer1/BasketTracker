@@ -57,6 +57,8 @@ public class TeamBuilderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_team_builder);
         ButterKnife.bind(this);
         context = this;
+        clientBD = new SQLiteHelper(this);
+
 
         setData();
         setLayout();
@@ -67,9 +69,6 @@ public class TeamBuilderActivity extends AppCompatActivity {
 
 
     private void setData() {
-        clientBD = new SQLiteHelper(this);
-
-
         clientBD.open();
 
         teamList = new ArrayList<>();
@@ -140,18 +139,15 @@ public class TeamBuilderActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == REQUEST_TEAM_CONSTRUCTOR){
             if(resultCode==RESULT_OK){
-                clientBD.open();
-                teamList.clear();
-                teamList.addAll(clientBD.getTeams());
-                clientBD.close();
+                setData();
+                setAdapters();
             }
+            playerAdapter.notifyDataSetChanged();
             teamAdapter.notifyDataSetChanged();
         }else{
             if(resultCode==RESULT_OK){
-                clientBD.open();
-                personList.clear();
-                personList.addAll(clientBD.getPersons());
-                clientBD.close();
+                setData();
+                setAdapters();
             }
             playerAdapter.notifyDataSetChanged();
             teamAdapter.notifyDataSetChanged();

@@ -1,6 +1,8 @@
 package com.example.voro.baskettracker.entities;
 
-public class Team {
+import java.io.Serializable;
+
+public class Team implements Serializable{
     String name;
     int id;
 

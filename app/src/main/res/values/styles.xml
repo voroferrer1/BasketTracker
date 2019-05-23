@@ -7,5 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Timer" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/cursed_timer_ulil</item>
+        <item name="android:textColor">#ff0000</item>
+    </style>
 
 </resources>

@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.voro.baskettracker.entities.Match;
 import com.example.voro.baskettracker.entities.Person;
 import com.example.voro.baskettracker.entities.Team;
 
@@ -100,7 +101,6 @@ public class SQLiteHelper {
                 person.setPosition(cursor.getString(cursor.getColumnIndex(DB.PERSON_POSITION)));
                 person.setTeam(cursor.getInt(cursor.getColumnIndex(DB.PERSON_TEAM)));
                 person.setId(cursor.getInt(cursor.getColumnIndex(DB.PERSON_ID)));
-
                 personList.add(person);
                 cursor.moveToNext();
             }
@@ -131,9 +131,19 @@ public class SQLiteHelper {
                         {DB.PERSON_NUMBER, Integer.toString(person.getDorsal())},
                         {DB.PERSON_FAULT, Integer.toString(person.getFaults())},
                         {DB.PERSON_POINTS, Integer.toString(person.getPoints())},
-                        {DB.PERSON_TEAM, Integer.toString(person.getPoints())},
+                        {DB.PERSON_TEAM, Integer.toString(person.getTeam())},
                         {DB.PERSON_POSITION, person.getPosition()}
                 }
         );
+    }
+    public void insertMatch(Match match){
+        insert(DB.MATCH_TABLE_NAME,new String[][]{
+                {DB.MATCH_FAULTS_LOCAL,Integer.toString(match.getLocal_faults())},
+                {DB.MATCH_FAULTS_VISITOR,Integer.toString(match.getVisitor_faults())},
+                {DB.MATCH_POINTS_LOCAL,Integer.toString(match.getLocal_points())},
+                {DB.MATCH_POINTS_VISITOR,Integer.toString(match.getVisitor_points())},
+                {DB.MATCH_TEAM_LOCAL,Integer.toString(match.getLocal_team())},
+                {DB.MATCH_TEAM_VISITOR,Integer.toString(match.getVisiton_team())}
+        });
     }
 }

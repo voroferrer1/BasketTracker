@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.voro.baskettracker.Position;
 import com.example.voro.baskettracker.R;
 import com.example.voro.baskettracker.entities.Team;
 
@@ -38,20 +37,20 @@ public class TeamSelectorAdapter extends RecyclerView.Adapter<TeamSelectorAdapte
 
     @Override
 
-    public TeamSelectorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public TeamSelectorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int pos) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_selector, viewGroup, false);
         return new TeamSelectorAdapter.ViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(final @NonNull TeamSelectorAdapter.ViewHolder holder, int i) {
+    public void onBindViewHolder(final @NonNull TeamSelectorAdapter.ViewHolder holder, int pos) {
         team = teamList.get(holder.getAdapterPosition());
         holder.textName.setText(team.getName());
         holder.layoutPosition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickListener.OnClick(holder.getAdapterPosition(),team.getId());
+                onClickListener.OnClick(holder.getAdapterPosition(),teamList.get(holder.getAdapterPosition()).getId());
             }
         });
     }
